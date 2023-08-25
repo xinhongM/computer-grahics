@@ -1,0 +1,78 @@
+
+\documentclass[]{article}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{amsmath}
+\usepackage[ruled]{algorithm2e}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+%opening
+\title{Report for Computer GraphicII, HW2 \\ The Application of K-means Clustering }
+\author{Jiang Xinhong 2020533075}
+
+
+\begin{document}
+
+\maketitle
+Acknowledgements:
+
+Deadline: 2022-10-25 23:59:59
+
+
+You should answer the questions in \textbf{English}
+
+
+You can choose C++ or Python, and no restrictions on programming framework. You can freely use frameworks such as openGL.
+
+The \textbf{report} submits as a PDF file to gradscope, the programming part should package all the files include code, input files, executable file, readme.txt, and report. The \textbf{package} name is  \textbf{your\_student\_name+student\_id.zip}.
+
+You will get Zero if the code not passing the plagiarism check.
+\newpage
+\section{The Application of K-means Clustering}
+
+Explore the application of K-means clustering in image superpixel segmentation and mesh simplification. \textbf{Give details of the algorithms, experimental results, and analysis}.
+
+\subsection{image superpixel segmentation (50 points)}
+
+\subsubsection{Description of naive K-means Clustering algorithm}
+Given a set of observations (x1, x2, ..., xn), where each observation is a d-dimensional real vector, $k$-means clustering aims to partition the n observations into $k$ ($\leq$n) sets $\textbf{S} = \{S_1, S_2, ..., S_k\}$ so as to minimize the within-cluster sum of squares (WCSS) (i.e. variance). Formally, the objective is to find:
+$$\displaystyle {\underset {\mathbf {S} }{\operatorname {arg\,min} }}\sum _{i=1}^{k}\sum _{\mathbf {x} \in S_{i}}\left\|\mathbf {x} -{\boldsymbol {\mu }}_{i}\right\|^{2}={\underset {\mathbf {S} }{\operatorname {arg\,min} }}\sum _{i=1}^{k}|S_{i}|\operatorname {Var} S_{i}$$
+where $\mu_{i}$ is the mean of points in $S_i$. This is equivalent to minimizing the pairwise squared deviations of points in the same cluster:
+$$\displaystyle |S_{i}|\sum _{\mathbf {x} \in S_{i}}\left\|\mathbf {x} -{\boldsymbol {\mu }}_{i}\right\|^{2}=\sum _{\mathbf {x} \neq \mathbf {y} \in S_{i}}\left\|\mathbf {x} -\mathbf {y} \right\|^{2}$$
+The equivalence can be deduced from identity $\displaystyle |S_{i}|\sum _{\mathbf {x} \in S_{i}}\left\|\mathbf {x} -{\boldsymbol {\mu }}_{i}\right\|^{2}=\sum _{\mathbf {x} \neq \mathbf {y} \in S_{i}}\left\|\mathbf {x} -\mathbf {y} \right\|^{2}$.
+Since the total variance is constant, this is equivalent to maximizing the sum of squared deviations between points in different clusters (between-cluster sum of squares, BCSS), This deterministic relationship is also related to the law of total variance in probability theory.\\
+
+\subsubsection{Algorithm steps of K-means}
+The algorithm steps of K-means are:
+
+
+\begin{enumerate}
+	\item Select the initial k samples as the initial cluster center;
+	\item For each sample in the dataset, calculate its distance to k cluster centers and classify it into the class corresponding to the cluster center with the smallest distance;
+	\item For each class, recalculate its cluster center (ie, the centroid of all samples belonging to that class);
+	\item Repeat steps 2 and 3 above until a certain termination condition (number of iterations, minimum error change, etc.) is reached.	
+\end{enumerate}
+For which the pseudo-code is:
+
+\begin{algorithm}
+	\label{K-means}
+	\LinesNumbered
+
+	\While{cluster changed}{ 
+		\For{all data dots}{
+			\For{all centroids}{
+			
+			}   
+		\If{$p_1p_2$ across with 2 edge}{
+			interpoly[i] = True \tcc{corresponding Bool value}
+			} 
+		}
+	}
+\end{algorithm}
+
+\newpage
+\subsection{mesh simplification (50 points)}
+
+
+
+\end{document}
